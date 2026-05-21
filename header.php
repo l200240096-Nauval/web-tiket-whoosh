@@ -12,6 +12,8 @@
     <a class="brand" href="index.php"><span>Whoosh</span><small>Ticket</small></a>
     <nav>
         <a href="index.php">Beli Tiket Whoosh</a>
+        <a href="check_ticket.php">Cek Tiket</a>
+        <a href="history.php">History</a>
         <?php if (is_login() && $_SESSION['user']['role'] === 'admin'): ?>
             <a href="dashboard.php">Admin</a>
             <a href="bookings.php">Data Booking</a>

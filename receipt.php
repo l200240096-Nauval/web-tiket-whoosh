@@ -26,6 +26,9 @@ require 'header.php';
 ?>
 <section class="panel" style="max-width: 720px; margin: auto;">
     <h1>E-Tiket Whoosh</h1>
+    <div class="alert <?= $booking['status'] === 'Paid' ? 'success' : 'error' ?>">
+        <?= $booking['status'] === 'Paid' ? 'Tiket sudah aktif dan siap digunakan.' : 'Tiket sudah dipesan, tetapi belum dibayar.' ?>
+    </div>
     <table>
         <tr><th>Kode Booking</th><td><?= e($booking['kode_booking']) ?></td></tr>
         <tr><th>Penumpang</th><td><?= e($booking['nama_penumpang']) ?></td></tr>
@@ -43,6 +46,7 @@ require 'header.php';
         <?php if ($booking['status'] !== 'Paid'): ?>
             <a class="btn orange" href="payment.php?kode=<?= e($booking['kode_booking']) ?>">Bayar Sekarang</a>
         <?php endif; ?>
+        <a class="btn green" href="history.php">Lihat History</a>
         <a class="btn" href="index.php">Beli Tiket Lagi</a>
     </p>
 </section>

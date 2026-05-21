@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$kode, $userId, $schedule['id'], $tanggalBerangkat, $nama, $identitas, $email, $telepon, $jumlah, $total]);
 
     $pdo->commit();
+    save_booking_history($kode);
     flash('success', 'Booking berhasil. Silakan lanjutkan pembayaran.');
     header('Location: payment.php?kode=' . urlencode($kode));
     exit;

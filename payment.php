@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare('UPDATE bookings SET status = "Paid", payment_method = ?, payment_code = ?, paid_at = NOW() WHERE kode_booking = ?');
     $stmt->execute([$method, $paymentCode, $booking['kode_booking']]);
 
+    save_booking_history($booking['kode_booking']);
     flash('success', 'Pembayaran berhasil. Tiket sudah aktif.');
     header('Location: receipt.php?kode=' . urlencode($booking['kode_booking']));
     exit;

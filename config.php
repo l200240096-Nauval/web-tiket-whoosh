@@ -68,3 +68,12 @@ function flash($key, $message = null)
     return null;
 }
 
+function save_booking_history($kode)
+{
+    if (!isset($_SESSION['booking_history'])) {
+        $_SESSION['booking_history'] = [];
+    }
+
+    array_unshift($_SESSION['booking_history'], $kode);
+    $_SESSION['booking_history'] = array_values(array_unique($_SESSION['booking_history']));
+}
