@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS tiket_kereta_db;
-USE tiket_kereta_db;
-
 DROP TABLE IF EXISTS bookings;
 DROP TABLE IF EXISTS schedules;
 DROP TABLE IF EXISTS trains;
