@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$host = 'localhost';
-$db = 'tiket_kereta_db';
-$user = 'root';
-$pass = '';
+$host = 'sql105.infinityfree.com';
+$db   = 'if0_41984886_tiket_kereta_db';
+$user = 'if0_41984886';
+$pass = 'prakpemweb999';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
